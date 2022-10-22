@@ -1,0 +1,13 @@
+name: Common issues check
+on: [workflow_dispatch]
+
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Execute pre-commit check that have no auto-fixes
+      if: always()
+      uses: pre-commit/action@v2.0.0
