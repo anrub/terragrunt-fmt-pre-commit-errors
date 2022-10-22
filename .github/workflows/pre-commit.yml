@@ -7,7 +7,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Execute pre-commit check that have no auto-fixes
       uses: pre-commit/action@v2.0.0
