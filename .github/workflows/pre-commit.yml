@@ -22,6 +22,6 @@ jobs:
         terragrunt -v
         
     - name: Execute pre-commit check that have no auto-fixes
-      uses: pre-commit/action@v2.0.0
+      uses: pre-commit/action@v3.0.0
       with:
         extra_args: --all-files
