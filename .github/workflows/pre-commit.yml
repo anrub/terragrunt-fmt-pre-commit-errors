@@ -9,5 +9,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Setup Terraform v1.2.6
+      uses: hashicorp/setup-Terraform@v1
+      with:
+        terraform_version: 1.2.6
+        terraform_wrapper: true
+
+    - name: Setup Terragrunt v0.38.4
+      run: |
+        sudo wget -q -O /bin/terragrunt "https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.4/terragrunt_linux_amd64"
+        sudo chmod +x /bin/terragrunt
+        terragrunt -v
+        
     - name: Execute pre-commit check that have no auto-fixes
       uses: pre-commit/action@v2.0.0
